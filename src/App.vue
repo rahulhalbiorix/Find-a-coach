@@ -24,8 +24,5 @@ export default{
 header{
   height: 10vh;
 }
-main{
-  height: 90vh;
-  background-color: palegreen;
-}
+
 </style>
