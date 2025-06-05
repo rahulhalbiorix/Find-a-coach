@@ -1,4 +1,3 @@
-
 <template>
   <header>
     <Header></Header>
@@ -24,7 +23,6 @@ export default{
 <style scoped>
 header{
   height: 10vh;
-  background-color: plum;
 }
 main{
   height: 90vh;

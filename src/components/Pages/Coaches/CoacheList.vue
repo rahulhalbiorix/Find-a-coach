@@ -1,10 +1,19 @@
 <template>
-    <h1>Coach list</h1>
+    <ul v-for="coach in coaches" >
+        <li>
+              {{ coach }}
+        </li>
+    </ul>  
+
 </template>
 
-<style scoped>
-*{
-    background-color: brown;
+<script>
+export default{
+    data(){
+        return{
+            coaches: this.$store.state.coaches 
+        }
+    }
 }
 
-</style>
+</script>
