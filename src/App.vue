@@ -9,7 +9,7 @@
 
 
 <script>
-import { RouterView } from 'vue-router';
+
 import Header from './components/TheHeader/Navbar.vue'
 
 export default{
@@ -23,6 +23,10 @@ export default{
 <style scoped>
 header{
   height: 10vh;
+}
+
+main{
+  border: 2px solid red;
 }
 
 </style>
