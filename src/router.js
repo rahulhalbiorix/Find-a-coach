@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory,  } from "vue-router"
-import CoacheList from "./components/Pages/Coaches/CoacheList.vue";
-import CoachDetails from "./components/Pages/Coaches/CoachDetails.vue";
-import ContactCoach from "./components/Pages/Requets/ContactCoach.vue";
-import RequestReceived from "./components/Pages/Requets/RequestReceived.vue";
-import CoachRegistration from "./components/Pages/Coaches/CoachRegistration.vue";
-import PageNotFound from "./components/Page404/PageNotFound.vue";
+import CoacheList from "./views/Coaches/CoacheList.vue";
+import CoachDetails from "./views/Coaches/CoachDetails.vue";
+import CoachRegistration from "./views/Coaches/CoachRegistration.vue";
+import ContactCoach from "./views/Requets/ContactCoach.vue";
+import RequestReceived from "./views/Requets/RequestReceived.vue";
+import PageNotFound from "./views/Page404/PageNotFound.vue";
 
 
 const router = createRouter({
@@ -20,10 +20,16 @@ const router = createRouter({
         },
         {
             path: '/coaches/:id',
+            name: 'CoachDetails',
             component: CoachDetails,
+            props:true,
+            meta:{
+                isCoachDetailPage:true
+            },
             children: [
                 {
                     path: 'contact',
+                    name:'Contact',
                     component: ContactCoach
                 }
             ]
@@ -34,6 +40,7 @@ const router = createRouter({
         },
         {
             path: '/contact',
+            name:'Contact',
             component: ContactCoach
         },
         {

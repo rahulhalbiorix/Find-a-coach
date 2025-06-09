@@ -5,7 +5,8 @@
     </div>
 
     <div  class="border border-gray-200">
-      <div class="py-4 px-10 flex justify-between items-center border-b-2 border-gray-300 ">
+      <div class="py-4 px-10 flex justify-between items-center border-b-2 border-gray-300 "
+      >
         <button
           class="text-white bg-gradient-to-br from bg-blue-500 to-blue-800 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-300 font-medium rounded text-sm px-5 py-3 text-center me-2 mb-2"
           @click="A"
@@ -20,7 +21,7 @@
         </button>
       </div>
       <div class="coach-list grid grid-cols-1 md:grid-cols-3 gap-6 p-5">
-        <CoachItem v-for="coach in coaches" :key="coach.id" :coach="coach">
+        <CoachItem  variant="list"  v-for="coach in coaches"  :key="coach.id" :coach="coach">
         </CoachItem>
       </div>
     </div>
@@ -28,13 +29,14 @@
 </template>
 
 <script>
-import CoachItem from "../../Coach/CoachItem.vue";
-import FilterCoachList from "../../Coach/FilterCoachList.vue";
+
+import CoachItem from '/src/components/Coach/CoachItem.vue'
+import FilterCoachList from '/src/components/Coach/FilterCoachList.vue'
 
 export default {
   components: {
     CoachItem,
-    FilterCoachList,
+    FilterCoachList
   },
 
   data() {

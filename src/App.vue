@@ -25,8 +25,5 @@ header{
   height: 10vh;
 }
 
-main{
-  border: 2px solid red;
-}
 
 </style>
