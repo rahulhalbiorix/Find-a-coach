@@ -25,23 +25,17 @@ const router = createRouter({
             props:true,
             meta:{
                 isCoachDetailPage:true
-            },
-            children: [
-                {
-                    path: 'contact',
-                    name:'Contact',
-                    component: ContactCoach
-                }
-            ]
+            }
         },
         {
             path: '/register',
             component: CoachRegistration
         },
         {
-            path: '/contact',
+            path: '/contact/:id',
             name:'Contact',
-            component: ContactCoach
+            component: ContactCoach,
+            props:true
         },
         {
             path: '/requests',

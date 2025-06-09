@@ -42,7 +42,7 @@
 
       <!-- Specialized Areas -->
       <div class="flex flex-col w-full sm:w-auto">
-        <label class="text-blue-700 font-medium mb-2">Areas</label>
+        <label class="text-blue-700 font-medium mb-2">Categories</label>
 
         <!-- Custom Dropdown -->
         <div class="relative">
@@ -72,7 +72,7 @@
               'justify-between',
             ]"
           >
-            Select Areas
+            Select Categories
             <svg
               class="w-2.5 h-2.5 ms-3"
               aria-hidden="true"

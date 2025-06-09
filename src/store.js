@@ -104,9 +104,47 @@ const store = createStore({
                     description: 'I teach both frontend and backend development with real-world project guidance.',
                     hourlyRate: 31
                 }
+            ],
+            request:[
+              {
+                id:'c1',
+                email:'rahulm@gmail.com',
+                message: 'i want to learn fronted developement'
+              },
+                {
+                id:'c5',
+                email:'yash@gmail.com',
+                message: 'i want to learn backend developement'
+              },
+                {
+                id:'c3',
+                email:'arjun@gmail.com',
+                message: 'i want to learn developing...'
+              },
+                {
+                id:'c4',
+                email:'ashutosh@gmail.com',
+                message: 'i want to learn Full stack developement...'
+              }
             ]
         }
 
+    },
+    mutations:{
+         ADD_REQUEST(state,payload){
+            console.log("🔵 ", payload)
+           state.request.push(payload)
+       }
+    },
+
+    actions:{
+        addRequest(context,payload){
+            console.log(context)
+           console.log(payload);
+            
+           context.commit('ADD_REQUEST',payload)
+           
+        }
     }
 })
 
