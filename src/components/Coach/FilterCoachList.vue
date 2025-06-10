@@ -9,35 +9,47 @@
     <div class="flex flex-wrap gap-6 items-end">
       <!-- Name Filter -->
       <div class="flex flex-col w-full sm:w-48">
-        <label for="searchName" class="text-blue-700 font-medium mb-2">Name</label>
+        <label for="searchName" class="text-blue-700 font-medium mb-2"
+          >Name</label
+        >
         <input
+          v-model="name"
           id="searchName"
           type="text"
           placeholder="Enter name"
           class="px-3 py-1.5 border border-blue-300 rounded-md bg-white shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
         />
+        {{ name }}
       </div>
 
       <!-- Min Rate -->
       <div class="flex flex-col w-full sm:w-36">
-        <label for="minRate" class="text-blue-700 font-medium mb-2">Min Rate ($)</label>
+        <label for="minRate" class="text-blue-700 font-medium mb-2"
+          >Min Rate ($)</label
+        >
         <input
+          v-model="minRate"
           id="minRate"
           type="number"
           placeholder="Min"
           class="px-3 py-1.5 border border-blue-300 rounded-md bg-white shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
         />
+        {{ minRate }}
       </div>
 
       <!-- Max Rate -->
       <div class="flex flex-col w-full sm:w-36">
-        <label for="maxRate" class="text-blue-700 font-medium mb-2">Max Rate ($)</label>
+        <label for="maxRate" class="text-blue-700 font-medium mb-2"
+          >Max Rate ($)</label
+        >
         <input
+          v-model="maxRate"
           id="maxRate"
           type="number"
           placeholder="Max"
           class="px-3 py-1.5 border border-blue-300 rounded-md bg-white shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
         />
+        {{ maxRate }}
       </div>
 
       <!-- Specialized Areas -->
@@ -90,78 +102,109 @@
             </svg>
           </button>
 
+          {{ categories }}
           <!-- Dropdown Menu -->
           <div
             id="dropdownCheckboxMenu"
             v-show="isDropdownVisible"
             class="absolute w-full sm:w-48 bg-white border border-blue-300 rounded-lg shadow-lg mt-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            style="top: 100%; left: 0;" 
+            style="top: 100%; left: 0"
           >
             <ul class="p-3 space-y-3 text-sm text-gray-700">
               <li>
                 <div class="flex items-center">
                   <input
+                    v-model="categories"
                     id="checkbox-item-1"
                     type="checkbox"
                     value="frontend"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
                   />
-                  <label for="checkbox-item-1" class="ms-2 text-sm font-medium text-gray-900">Frontend</label>
+                  <label
+                    for="checkbox-item-1"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >Frontend</label
+                  >
                 </div>
               </li>
               <li>
                 <div class="flex items-center">
                   <input
+                    v-model="categories"
                     id="checkbox-item-2"
                     type="checkbox"
                     value="backend"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
                   />
-                  <label for="checkbox-item-2" class="ms-2 text-sm font-medium text-gray-900">Backend</label>
+                  <label
+                    for="checkbox-item-2"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >Backend</label
+                  >
                 </div>
               </li>
               <li>
                 <div class="flex items-center">
                   <input
+                    v-model="categories"
                     id="checkbox-item-3"
                     type="checkbox"
                     value="career"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
                   />
-                  <label for="checkbox-item-3" class="ms-2 text-sm font-medium text-gray-900">Career</label>
+                  <label
+                    for="checkbox-item-3"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >Career</label
+                  >
                 </div>
               </li>
               <li>
                 <div class="flex items-center">
                   <input
+                    v-model="categories"
                     id="checkbox-item-4"
                     type="checkbox"
                     value="fitness"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
                   />
-                  <label for="checkbox-item-4" class="ms-2 text-sm font-medium text-gray-900">Fitness</label>
+                  <label
+                    for="checkbox-item-4"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >Fitness</label
+                  >
                 </div>
               </li>
               <li>
                 <div class="flex items-center">
                   <input
+                    v-model="categories"
                     id="checkbox-item-5"
                     type="checkbox"
                     value="life"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
                   />
-                  <label for="checkbox-item-5" class="ms-2 text-sm font-medium text-gray-900">Life</label>
+                  <label
+                    for="checkbox-item-5"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >Life</label
+                  >
                 </div>
               </li>
               <li>
                 <div class="flex items-center">
                   <input
+                    v-model="categories"
                     id="checkbox-item-6"
                     type="checkbox"
                     value="yoga"
                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500"
                   />
-                  <label for="checkbox-item-6" class="ms-2 text-sm font-medium text-gray-900">Yoga</label>
+                  <label
+                    for="checkbox-item-6"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >Yoga</label
+                  >
                 </div>
               </li>
             </ul>
@@ -169,8 +212,14 @@
         </div>
       </div>
 
-      <!-- Reset Button -->
+      <!--Button -->
       <div class="ml-auto">
+        <button
+          class="px-3 py-1.5 bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-600 hover:to-amber-400 text-white font-semibold rounded shadow-sm mt-4 mr-2 sm:mt-0 transition duration-200"
+          @click="setDataQueryOnParams"
+        >
+          Filter Coach
+        </button>
         <button
           class="px-3 py-1.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded shadow-sm mt-4 sm:mt-0 transition duration-200"
         >
@@ -185,6 +234,10 @@
 export default {
   data() {
     return {
+      name:"",
+      minRate:null,
+      maxRate:null,
+      categories:[],
       isDropdownVisible: false, // Controls dropdown visibility
     };
   },
@@ -192,6 +245,21 @@ export default {
     showDropdown() {
       this.isDropdownVisible = !this.isDropdownVisible; // Toggle dropdown visibility
     },
+    setDataQueryOnParams(){
+      console.log("🟢setDataQueryParamsWorks");
+      console.log(this.$route.query)
+      console.log(this.$router)
+      this.$router.replace(
+        {
+        query: {
+        name:this.name,
+        minRate:this.minRate,
+        maxRate:this.maxRate,
+        categories: this.categories
+      }
+        }
+      )
+    }
   },
 };
 </script>
