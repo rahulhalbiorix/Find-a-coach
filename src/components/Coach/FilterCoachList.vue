@@ -221,6 +221,7 @@
           Filter Coach
         </button>
         <button
+          @click="resetFilters"
           class="px-3 py-1.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold rounded shadow-sm mt-4 sm:mt-0 transition duration-200"
         >
           🔄 Reset
@@ -234,10 +235,10 @@
 export default {
   data() {
     return {
-      name:"",
-      minRate:null,
-      maxRate:null,
-      categories:[],
+      name: "",
+      minRate: null,
+      maxRate: null,
+      categories: [],
       isDropdownVisible: false, // Controls dropdown visibility
     };
   },
@@ -245,21 +246,23 @@ export default {
     showDropdown() {
       this.isDropdownVisible = !this.isDropdownVisible; // Toggle dropdown visibility
     },
-    setDataQueryOnParams(){
-      console.log("🟢setDataQueryParamsWorks");
-      console.log(this.$route.query)
-      console.log(this.$router)
-      this.$router.replace(
-        {
+    setDataQueryOnParams() {
+      this.$router.replace({
         query: {
-        name:this.name,
-        minRate:this.minRate,
-        maxRate:this.maxRate,
-        categories: this.categories
-      }
-        }
-      )
-    }
+          name: this.name,
+          minRate: this.minRate,
+          maxRate: this.maxRate,
+          categories: this.categories.join(),
+        },
+      });
+    },
+    resetFilters() {
+      this.name = "";
+      this.minRate = null;
+      this.maxRate = null;
+      this.categories = [];
+      this.$router.replace({ query: {} });
+    },
   },
 };
 </script>

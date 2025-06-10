@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     submitContactFormData() {
-      console.log("submit form data method is working...");
+
       if (this.email == "" || this.message == "" || !this.email.includes("@")) {
         this.isFormValid = false;
         return;
